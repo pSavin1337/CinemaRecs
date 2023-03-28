@@ -1,10 +1,10 @@
 package com.nc.cinemarecs.di
 
+import com.google.gson.Gson
 import com.nc.cinemarecs.data.network.CinemaApi
 import com.nc.cinemarecs.utils.Constants.API_KEY
 import com.nc.cinemarecs.utils.Constants.BASE_URL
 import com.nc.cinemarecs.utils.Constants.CONNECTION_TIME
-import com.google.gson.Gson
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

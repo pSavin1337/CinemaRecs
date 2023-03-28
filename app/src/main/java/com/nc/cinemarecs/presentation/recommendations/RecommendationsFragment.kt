@@ -27,7 +27,12 @@ class RecommendationsFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
+        viewModel.getRecommendations()
+        viewModel.recommendationsLiveData.observe(viewLifecycleOwner) {
+            val adapter = RecommendationsAdapter()
+            adapter.recommendationsList = it
+            binding.recommendationViewpager.adapter = adapter
+        }
     }
 
     override fun onDestroyView() {

@@ -3,8 +3,9 @@ package com.nc.cinemarecs.data.local.models
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 import com.nc.cinemarecs.domain.entities.CinemaEntity
+import com.nc.cinemarecs.utils.Constants.CINEMA_TABLE_NAME
 
-@Entity
+@Entity(tableName = CINEMA_TABLE_NAME)
 data class CinemaLocalModel(
     @PrimaryKey(autoGenerate = true)
     val id: Int = 0,
@@ -24,8 +25,8 @@ fun CinemaLocalModel.toCinemaEntity() =
 
 fun CinemaEntity.toCinemaLocalModel() =
     CinemaLocalModel(
-        name = name,
-        poster = poster,
-        description = description,
-        trailer = trailer
+        name = name!!,
+        poster = poster!!,
+        description = description!!,
+        trailer = trailer!!
     )
